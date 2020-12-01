@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LevelsForm from './LevelsForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
@@ -7,6 +8,18 @@ const LevelsList = ({ levels, removeProgram, updateProgram }) => {
     id: null,
     value: ''
   });
+
+  const submitUpdate = value => {
+    updateProgram(edit.id, value);
+    setEdit({
+      id: null,
+      value: ''
+    });
+  };
+
+  if (edit.id) {
+    return <LevelsForm edit={edit} onSubmit={submitUpdate} />;
+  }
 
   return levels.map((level, index) => (
     <div
