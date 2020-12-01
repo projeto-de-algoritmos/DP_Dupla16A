@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import LevelsForm from './LevelsForm';
+import LevelsResult from './LevelsResult';
 import LevelsList from './LevelsList';
 
 function Programmation() {
@@ -36,6 +37,8 @@ function Programmation() {
 				/>
 			</div>
 			<div style={{display: 'flex', flex: '1', flexDirection: 'column'}}>
+				<h1>Lista das áreas</h1>
+				<LevelsResult path={path}/>
 			</div>
 		</div>
   );
