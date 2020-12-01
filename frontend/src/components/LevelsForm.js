@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-function ProgramForm(props) {
+function LevelForm(props) {
   const [lvlMin, setLvlMin] = useState(props.edit ? props.edit.value.date : '');
   const [mobsLvl, setMobsLvl] = useState(props.edit ? props.edit.value.time : '');
   const [name, setName] = useState(props.edit ? props.edit.value.name : '');
@@ -28,7 +28,7 @@ function ProgramForm(props) {
 			<div style={{display: 'flex', flexDirection:'column'}}>
         <div style={{display: 'flex', flexDirection:'row'}}>
           <input
-            placeholder='Nome do programa'
+            placeholder='Nome da área nova'
             type='text'
             value={name}
             onChange={(e) => {setName(e.target.value); console.log(`NAME: ${e.target.value}`)}}
@@ -66,14 +66,13 @@ function ProgramForm(props) {
   return (
     <form onSubmit={handleSubmit} className='level-form'>
       {props.edit ? (
-				form('Editar Programa')
+				form('Editar área')
       ) : (
-				form('Adicionar programa')
+				form('Adicionar nova área')
       )}
     </form>
   );
 }
 
-export default ProgramForm;
-
+export default LevelForm;
 
