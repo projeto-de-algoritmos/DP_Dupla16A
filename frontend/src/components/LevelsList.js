@@ -3,14 +3,14 @@ import LevelsForm from './LevelsForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
-const LevelsList = ({ levels, removeProgram, updateProgram }) => {
+const LevelsList = ({ levels, removeLevel, updateLevel }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: ''
   });
 
   const submitUpdate = value => {
-    updateProgram(edit.id, value);
+    updateLevel(edit.id, value);
     setEdit({
       id: null,
       value: ''
@@ -42,7 +42,7 @@ const LevelsList = ({ levels, removeProgram, updateProgram }) => {
       </div>
       <div className='icons' style={{flex: 1}}>
         <RiCloseCircleLine
-          onClick={() => removeProgram(level.id)}
+          onClick={() => removeLevel(level.id)}
           className='delete-icon'
         />
         <TiEdit
