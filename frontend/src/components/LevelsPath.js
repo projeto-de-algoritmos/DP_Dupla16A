@@ -32,8 +32,8 @@ function Programmation() {
 				<LevelsForm onSubmit={addLevelsList} />
 				<LevelsList
 					levels={levels}
-					removeLevels={removeLevels}
-					updateLevels={updateLevels}
+					removeLevel={removeLevels}
+					updateLevel={updateLevels}
 				/>
 			</div>
 			<div style={{display: 'flex', flex: '1', flexDirection: 'column'}}>
