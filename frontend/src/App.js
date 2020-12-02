@@ -1,10 +1,10 @@
-import LevelsPath from './components/LevelsPath'
+import QuestCatalog from './components/QuestCatalog'
 import './App.css';
 
 function App() {
   return (
     <div className="level-app">
-			<LevelsPath />
+			<QuestCatalog />
     </div>
   );
 }
