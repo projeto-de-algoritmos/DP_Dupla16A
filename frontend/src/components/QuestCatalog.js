@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import QuestList from './QuestList'
 import API from '../util/API'
-import {Catalog} from '../util/catalog'
+import catalog from '../util/catalog'
 import { makeStyles } from '@material-ui/core/styles';
-import {CircularProgress, Button} from '@material-ui/core';
+import { InputLabel, CircularProgress, Button, MenuItem, FormControl, Select } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,48 +22,45 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Bulbapedia = () => {
+const QuestCatalog = () => {
   const [area, setArea] = useState(''); 
-  const [questList, setQuestList] = useState([]); 
+  const [quests, setQuests] = useState([]); 
   const classes = useStyles();
 
   const handleChange = (event) => {
-    setQuestList(null)
+    setQuests(null)
     setArea(event.target.value)
-    API(Catalog[event.target.value[0]], setQuestList)
-    
+		console.log(event.target.value)
+		console.log(catalog[event.target.value])
+		console.log(catalog)
+    API(catalog[event.target.value], setQuests)
   }
 
   const dropDownMenu = () => {
-    Catalog.map((item, index) => (
-      <MenuItem value={index}>{index}</MenuItem>
-    ))
+    return(Object.keys(catalog).map((item, index) => {
+			return(
+				<MenuItem value={item}>{item}</MenuItem>
+			)
+		}))
   }
 
-	if(questList !== null)
+	if(quests !== null)
 		return (
 			<div>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="demo-simple-select-outlined-label">Speed</InputLabel>
           <Select
-            style={{width: '175px'}}
+            style={{width: '100%'}}
             name="s"
             id="demo-simple-select-outlined"
             value={area}
             onChange={handleChange}
             label="Area"
           >
-          {dropDownMenu()}
+						{dropDownMenu()}
           </Select>
         </FormControl>
-				<QuestList />
-        <div style={{display: 'inline-block'}}>
-          <PokeList pokemons={pokemons} offset={offset} limit={limit} />
-        </div>
-        <div style={{marginTop: '20px'}}>
-					<Button type="button" onClick={prevAction}>Prev</Button>
-					<Button type="button" onClick={nextAction}>Next</Button>
-        </div>
+				<QuestList quests={quests}/>
 			</div>
 		);
 	return(
@@ -72,5 +69,5 @@ const Bulbapedia = () => {
     </div>
 	)
 }
-export default Bulbapedia;
+export default QuestCatalog;
 

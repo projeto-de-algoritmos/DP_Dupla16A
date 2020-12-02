@@ -4,7 +4,7 @@
   justify-content: start;
   width: 1120px;
   min-height: 600px;
-  background: #161a2b;
+  background: #FFF;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
@@ -147,14 +147,5 @@ h1 {
   align-items: center;
   font-size: 24px;
   cursor: pointer;
-}
-
-.delete-icon {
-  margin-right: 5px;
-  color: #fff;
-}
-
-.edit-icon {
-  color: #fff;
 }
 

@@ -5,7 +5,7 @@ const QuestList = ({ quests }) => {
   return quests.map((quest, index) => (
     <div
 			style={{marginLeft: 'auto', marginRight: 'auto'}}
-      className={'program-row'}
+      className={'level-row'}
     >
       <div style={{display: 'flex', justifyContent: 'space-between', flex: '5', marginRight: '30px'}}>
         <div>
