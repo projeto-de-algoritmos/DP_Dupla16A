@@ -13,7 +13,15 @@
 O projeto visa encontrar a maior sequencia crescente dentre  os níveis das missões nas áreas do jogo World of Warcraft utilizando um algorítmo de programação dinâmica.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+Tela inicial
+![img1](./Tutorials/printPA/img1.png)
+
+Tela com lista de missões de uma área desordenada
+![img2](./Tutorials/printPA/img2.png)
+
+Após a ordenação com maior sequência possível
+![img3](./Tutorials/printPA/img3.png)
 
 ## Instalação 
 **Linguagem**: JavaScript<br>
