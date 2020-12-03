@@ -41,7 +41,7 @@ navegador qualquer a url ```localhost:3000```.
 A utilização é simples, basta selecionar a Área que se deseja ver as missões e o programa trará a lista de missões, após é possível clicar no botão "MELHOR CAMINHO POSSÍVEL" e então o programa traçará a maior sequência crescente utilizando um algorítmo de programação dinâmica.
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+É recomendado que se utilize Firefox para a execução do projeto.
 
 
 
