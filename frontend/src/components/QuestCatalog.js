@@ -4,7 +4,7 @@ import API from '../util/API'
 import catalog from '../util/catalog'
 import { makeStyles } from '@material-ui/core/styles';
 import { InputLabel, CircularProgress, Button, MenuItem, FormControl, Select } from '@material-ui/core';
-
+import LIS from '../util/DynamicProgramming'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,19 +47,22 @@ const QuestCatalog = () => {
 	if(quests !== null)
 		return (
 			<div>
-        <FormControl variant="outlined" className={classes.formControl}>
-          <InputLabel id="demo-simple-select-outlined-label">Speed</InputLabel>
-          <Select
-            style={{width: '100%'}}
-            name="s"
-            id="demo-simple-select-outlined"
-            value={area}
-            onChange={handleChange}
-            label="Area"
-          >
-						{dropDownMenu()}
-          </Select>
-        </FormControl>
+				<div style={{justifyContent: 'center', display: 'flex'}}>
+					<FormControl variant="outlined" className={classes.formControl}>
+						<InputLabel id="demo-simple-select-outlined-label">Área</InputLabel>
+						<Select
+							style={{width: '100%'}}
+							name="s"
+							id="demo-simple-select-outlined"
+							value={area}
+							onChange={handleChange}
+							label="Area"
+						>
+							{dropDownMenu()}
+						</Select>
+					</FormControl>
+					<Button onClick={() => setQuests(LIS(quests))}>Melhor caminho possível</Button>
+				</div>
 				<QuestList quests={quests}/>
 			</div>
 		);

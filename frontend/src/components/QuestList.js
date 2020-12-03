@@ -14,7 +14,12 @@ const QuestList = ({ quests }) => {
       </div>
       <div style={{display: 'flex', justifyContent: 'space-between', flex: '5', marginRight: '30px'}}>
 				<div>
-					{`${quest.level}`}
+					{`Nível mínimo: ${quest.levelMin}`}
+				</div>
+      </div>
+      <div style={{display: 'flex', justifyContent: 'space-between', flex: '5', marginRight: '30px'}}>
+				<div>
+					{`Nível mobs: ${quest.levelMobs}`}
 				</div>
       </div>
     </div>
